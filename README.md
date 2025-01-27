@@ -1,8 +1,9 @@
 <h1 align="center">MERN Netflix Clone 🎬</h1>
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+![image](https://github.com/user-attachments/assets/6874cbe9-c16d-4c2b-961b-7354735eef75)
 
-[Video Tutorial on Youtube](https://youtu.be/5oNUqSMq_TU)
+
+![Video Tutorial on Youtube](https://youtu.be/5oNUqSMq_TU)
 
 About This Course:
 
