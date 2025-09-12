@@ -3,12 +3,10 @@ import bcryptjs from 'bcryptjs';
 import { generateTokenAndSetCookie } from '../utils/generateToken.js';
 
 export async function signup(req, res) {
-    
     try {
         const {email, password, username} = req.body;
 
         if (!email || !password || !username) {
-            console.log(email, password, username);
             return res.status(400).json({success:false, message: 'All fields are required'});
         }
 
@@ -21,8 +19,8 @@ export async function signup(req, res) {
             return res.status(400).json({success:false, message: 'Password must be at least 6 characters long'});
         }
         
-        const exitingUserByEmail = await User.findOne({email: email});
-        if (exitingUserByEmail) {
+        const existingUserByEmail = await User.findOne({email: email});
+        if (existingUserByEmail) {
             return res.status(400).json({success:false, message: 'Email already exists'});
         }
 
@@ -33,7 +31,6 @@ export async function signup(req, res) {
 
         const salt = await bcryptjs.genSalt(10);
         const hashedPassword = await bcryptjs.hash(password, salt);
-
 
         const Profile_pice = ["/avatar1.png", "/avatar2.png", "/avatar3.png"]
         const image = Profile_pice[Math.floor(Math.random() * Profile_pice.length)];
@@ -55,11 +52,9 @@ export async function signup(req, res) {
     } catch (error) {
         console.error('signup error: ', error.message);
         res.status(500).json({success:false, message: 'Internal server error'});
-        process.exit(1);
-        
+        // REMOVED: process.exit(1); ❌ This was the main cause of your crashes.
     }
 }
-
 
 export async function login(req, res) {
     try{

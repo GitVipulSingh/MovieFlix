@@ -12,8 +12,6 @@
   "dependencies": {
     "axios": "^1.7.9",
     "lucide-react": "^0.469.0",
-    "netflix_clone": "file:..",
-    "netflix-clone": "file:..",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.5.1",
@@ -35,6 +33,12 @@
     "globals": "^15.14.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "vite": "^6.0.5"
-  }
+    "vite": "^6.0.5",
+    "dotenv": "^16.0.3"
+  },
+  "description": "Netflix Clone frontend built with React, Vite, and TailwindCSS.",
+  "main": "eslint.config.js",
+  "keywords": ["react", "vite", "netflix-clone", "tailwindcss", "frontend"],
+  "author": "Vipul Singh",
+  "license": "ISC"
 }

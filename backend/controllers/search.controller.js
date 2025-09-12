@@ -26,7 +26,7 @@ export async function searchPerson(req, res) {
 
 		res.status(200).json({ success: true, content: response.results });
 	} catch (error) {
-		console.log("Error in searchPerson controller: ", error.message);
+		console.error("Error in searchPerson controller:", error.message);
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -56,7 +56,7 @@ export async function searchMovie(req, res) {
 		});
 		res.status(200).json({ success: true, content: response.results });
 	} catch (error) {
-		console.log("Error in searchMovie controller: ", error.message);
+		console.error("Error in searchMovie controller:", error.message);
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -84,9 +84,9 @@ export async function searchTv(req, res) {
 				},
 			},
 		});
-		res.json({ success: true, content: response.results });
+		res.status(200).json({ success: true, content: response.results });
 	} catch (error) {
-		console.log("Error in searchTv controller: ", error.message);
+		console.error("Error in searchTv controller:", error.message);
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -95,6 +95,7 @@ export async function getSearchHistory(req, res) {
 	try {
 		res.status(200).json({ success: true, content: req.user.searchHistory });
 	} catch (error) {
+		console.error("Error in getSearchHistory controller:", error.message);
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -113,7 +114,7 @@ export async function removeItemFromSearchHistory(req, res) {
 
 		res.status(200).json({ success: true, message: "Item removed from search history" });
 	} catch (error) {
-		console.log("Error in removeItemFromSearchHistory controller: ", error.message);
+		console.error("Error in removeItemFromSearchHistory controller:", error.message);
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
