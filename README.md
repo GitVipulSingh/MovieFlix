@@ -1,49 +1,86 @@
-<h1 align="center">MERN Netflix Clone 🎬</h1>
+# MERN Netflix Clone 🎬
 
-## 🎥 Video Demo  
+## Project Description
 
-[![Netflix Clone Frontend Walkthrough](https://github.com/user-attachments/assets/6874cbe9-c16d-4c2b-961b-7354735eef75)](https://youtu.be/5oNUqSMq_TU?si=zbvYMF1aVxrh9rB5 "Netflix Clone Frontend Walkthrough")
+A full-stack Netflix Clone project built with React, Vite, Express, and MongoDB. This project aims to replicate the core functionalities and user experience of Netflix.
 
-About This Course:
+## Features
 
--   ⚛️ Tech Stack: React.js, Node.js, Express.js, MongoDB, Tailwind
--   🔐 Authentication with JWT
--   📱 Responsive UI
--   🎬 Fetch Movies and Tv Show
--   🔎 Search for Actors and Movies
--   🎥 Watch Trailers
--   🔥 Fetch Search History
--   🐱‍👤 Get Similar Movies/Tv Shows
--   💙 Awesome Landing Page
--   🌐 Deployment
--   🚀 And Many More Cool Features
+*   ⚛️ **Tech Stack**: React.js, Vite, Node.js, Express.js, MongoDB, Tailwind CSS
+*   🔐 **Authentication**: Secure user authentication using JWT.
+*   📱 **Responsive UI**: A user interface that adapts to various screen sizes.
+*   🎬 **Movie & TV Show Data**: Fetching and displaying movie and TV show information.
+*   🔎 **Search Functionality**: Search for actors and movies.
+*   🎥 **Video Playback**: Watch trailers and videos.
+*   🔥 **Search History**: Stores and retrieves user search history.
+*   🐱‍👤 **Recommendations**: Suggests similar movies/TV shows based on user activity.
+*   💙 **Landing Page**: An engaging landing page.
+*   🌐 **Deployment**: Information about deployment (if applicable, though not explicitly detailed in provided files).
+*   🚀 **And Many More Cool Features**
 
-### Setup .env file
+## Setup
 
-```bash
+### Prerequisites
+
+*   Node.js (v18.0.0 or higher recommended)
+*   MongoDB
+
+### Environment Variables
+
+Create a `.env` file in the root of the `backend` directory and populate it with the following variables:
+
+\`\`\`bash
 PORT=5000
 MONGO_URI=your_mongo_uri
 NODE_ENV=development
 JWT_SECRET=your_jwt_secre
 TMDB_API_KEY=your_tmdb_api_key
-```
+\`\`\`
 
-### Run this app locally
+### Installation
 
-```shell
-npm run build
-```
+1.  **Clone the repository** (assuming this is done already).
+2.  **Install backend dependencies**:
+    \`\`\`bash
+    cd backend
+    npm install
+    cd ..
+    \`\`\`
+3.  **Install frontend dependencies**:
+    \`\`\`bash
+    cd frontend
+    npm install
+    cd ..
+    \`\`\`
 
-### Start the app
+## Running the Project
 
-```shell
+### Development Mode
+
+To run the application in development mode, start both the backend and frontend servers:
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+### Production Mode
+
+To start the application in production mode:
+
+\`\`\`bash
 npm run start
-```
+\`\`\`
 
+### Building the Frontend
 
-## 💬 Connect with Me  
+To build the frontend for production:
+
+\`\`\`bash
+npm run build
+\`\`\`
+
+## Connect with Me
 
 📧 **Email**: [Gmail Account](samarthmule7276@gmail.com)  
 💼 **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/samarthcreation-samarth-mule/)   
-📢 **LinkedIn Post**: [Check the Post](https://www.linkedin.com/posts/samarthcreation-samarth-mule_netflix-clone-mern-stack-project-frontend-activity-7289539781393342464-l0si?utm_source=share&utm_medium=member_desktop)  
-
+📢 **LinkedIn Post**: [Check the Post](https://www.linkedin.com/posts/samarthcreation-samarth-mule_netflix-clone-mern-stack-project-frontend-activity-7289539781393342464-l0si?utm_source=share&utm_medium=member_desktop)
