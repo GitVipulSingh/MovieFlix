@@ -15,7 +15,7 @@ A full-stack Netflix Clone project built with React, Vite, Express, and MongoDB.
 *   🔥 **Search History**: Stores and retrieves user search history.
 *   🐱‍👤 **Recommendations**: Suggests similar movies/TV shows based on user activity.
 *   💙 **Landing Page**: An engaging landing page.
-*   🌐 **Deployment**: Information about deployment (if applicable, though not explicitly detailed in provided files).
+<!-- *   🌐 **Deployment**: Information about deployment (if applicable, though not explicitly detailed in provided files). -->
 *   🚀 **And Many More Cool Features**
 
 ## Setup
