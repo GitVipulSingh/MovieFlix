@@ -79,8 +79,3 @@ To build the frontend for production:
 npm run build
 \`\`\`
 
-## Connect with Me
-
-📧 **Email**: [Gmail Account](samarthmule7276@gmail.com)  
-💼 **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/samarthcreation-samarth-mule/)   
-📢 **LinkedIn Post**: [Check the Post](https://www.linkedin.com/posts/samarthcreation-samarth-mule_netflix-clone-mern-stack-project-frontend-activity-7289539781393342464-l0si?utm_source=share&utm_medium=member_desktop)
