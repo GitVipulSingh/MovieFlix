@@ -19,34 +19,9 @@ const app = express();
 const PORT = ENV_VARS.PORT || 5000;
 const __dirname = path.resolve();
 
-// CORS configuration
+// CORS configuration - Temporarily allow all origins for deployment
 const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    const allowedOrigins = [
-      'http://localhost:5173',
-      'http://localhost:5174', 
-      'http://localhost:3000',
-      ENV_VARS.FRONTEND_URL || 'http://localhost:5173'
-    ];
-    
-    // In production, allow any vercel.app domain
-    if (ENV_VARS.NODE_ENV === 'production' && origin && origin.includes('.vercel.app')) {
-      console.log('Allowing Vercel domain:', origin);
-      return callback(null, true);
-    }
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.log('CORS blocked origin:', origin);
-      console.log('Allowed origins:', allowedOrigins);
-      console.log('Frontend URL from env:', ENV_VARS.FRONTEND_URL);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true, // Allow all origins temporarily
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
