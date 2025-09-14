@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 import authRoutes from './routes/auth.routes.js';
 import movieRoutes from './routes/movie.routes.js';
@@ -18,7 +19,32 @@ const app = express();
 const PORT = ENV_VARS.PORT || 5000;
 const __dirname = path.resolve();
 
+// CORS configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'http://localhost:5174', 
+      'http://localhost:3000',
+      ENV_VARS.FRONTEND_URL || 'http://localhost:5173'
+    ];
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
+};
+
 // Load middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
