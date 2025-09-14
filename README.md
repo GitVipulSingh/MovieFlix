@@ -1,8 +1,8 @@
-# MERN Netflix Clone 🎬
+# MERN MovieFlix Clone 🎬
 
 ## Project Description
 
-A full-stack Netflix Clone project built with React, Vite, Express, and MongoDB. This project aims to replicate the core functionalities and user experience of Netflix.
+A full-stack MovieFlix Clone project built with React, Vite, Express, and MongoDB. This project aims to replicate the core functionalities and user experience of MovieFlix.
 
 ## Features
 

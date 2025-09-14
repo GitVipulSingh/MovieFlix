@@ -16,7 +16,7 @@ function LoginPage() {
     <div className='h-screen w-full hero-bg'>
       <header className='max-w-6xl mx-auto flex items-center justify-between p-4'>
         <Link to={"/"}>
-        <img src="/netflix-logo.png" alt="logo" className='w-52'/>
+        <img src="/movieflix-logo.png" alt="logo" className='w-52'/>
         </Link>
       </header>
 
@@ -48,7 +48,7 @@ function LoginPage() {
           </form>
           <div className='text-center text-gray-300'>
             Don't have an account? {"  "}
-            <Link to='/signup' className='text-red-600 hover:underline'> Log In</Link>
+            <Link to='/signup' className='text-red-600 hover:underline'> Sign Up</Link>
             </div>
           </div>
           </div>

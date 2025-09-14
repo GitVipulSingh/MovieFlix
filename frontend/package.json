@@ -36,9 +36,9 @@
     "vite": "^6.0.5",
     "dotenv": "^16.0.3"
   },
-  "description": "Netflix Clone frontend built with React, Vite, and TailwindCSS.",
+  "description": "MovieFlix frontend built with React, Vite, and TailwindCSS.",
   "main": "eslint.config.js",
-  "keywords": ["react", "vite", "netflix-clone", "tailwindcss", "frontend"],
+  "keywords": ["react", "vite", "movieflix", "tailwindcss", "frontend"],
   "author": "Vipul Singh",
   "license": "ISC"
 }
