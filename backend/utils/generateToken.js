@@ -6,8 +6,8 @@ export const generateTokenAndSetCookie = (userId, res) => {
     res.cookie('jwt-movieflix', token, {
         maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
         httpOnly: true, // cookie is not accessible via client side script
-        sameSite: "strict", // cookie will only be sent in a first-party context
-        secure: ENV_VARS.NODE_ENV !== 'development', // cookie will only be set on a secure connection
+        sameSite: ENV_VARS.NODE_ENV === 'production' ? "none" : "strict", // allow cross-site cookies in production
+        secure: ENV_VARS.NODE_ENV === 'production', // require HTTPS in production
     });
     return token;
 };

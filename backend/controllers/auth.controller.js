@@ -1,6 +1,7 @@
 import {User} from '../models/user.model.js';
 import bcryptjs from 'bcryptjs';
 import { generateTokenAndSetCookie } from '../utils/generateToken.js';
+import { ENV_VARS } from '../config/envVars.js';
 
 export async function signup(req, res) {
     try {
@@ -91,7 +92,10 @@ export async function login(req, res) {
 
 export async function logout(req, res) {
     try{
-        res.clearCookie('jwt-movieflix');
+        res.clearCookie('jwt-movieflix', {
+            sameSite: ENV_VARS.NODE_ENV === 'production' ? "none" : "strict",
+            secure: ENV_VARS.NODE_ENV === 'production',
+        });
         res.status(200).json({success:true, message: 'Logged out successfully'});
     }
     catch(error){
