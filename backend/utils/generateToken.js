@@ -9,14 +9,9 @@ export const generateTokenAndSetCookie = (userId, res) => {
         httpOnly: true, // cookie is not accessible via client side script
     };
     
-    if (ENV_VARS.NODE_ENV === 'production') {
-        cookieOptions.sameSite = "none";
-        cookieOptions.secure = true;
-        // Don't set domain - let browser handle it
-    } else {
-        cookieOptions.sameSite = "strict";
-        cookieOptions.secure = false;
-    }
+    // Force production settings for cross-domain cookies
+    cookieOptions.sameSite = "none";
+    cookieOptions.secure = true;
     
     console.log('Setting cookie with options:', cookieOptions);
     res.cookie('jwt-movieflix', token, cookieOptions);
