@@ -32,9 +32,18 @@ const corsOptions = {
       ENV_VARS.FRONTEND_URL || 'http://localhost:5173'
     ];
     
+    // In production, allow any vercel.app domain
+    if (ENV_VARS.NODE_ENV === 'production' && origin && origin.includes('.vercel.app')) {
+      console.log('Allowing Vercel domain:', origin);
+      return callback(null, true);
+    }
+    
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
+      console.log('CORS blocked origin:', origin);
+      console.log('Allowed origins:', allowedOrigins);
+      console.log('Frontend URL from env:', ENV_VARS.FRONTEND_URL);
       callback(new Error('Not allowed by CORS'));
     }
   },
