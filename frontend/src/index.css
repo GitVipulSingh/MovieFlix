@@ -2,6 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MovieFlix Custom Theme */
+:root {
+  --primary-purple: #6366f1;
+  --primary-blue: #3b82f6;
+  --dark-bg: #0f0f23;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5b5bf6, #2563eb);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Gradient Button */
+.gradient-btn {
+  background: var(--accent-gradient);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Animated Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0f0f23, #1a1a3e, #2d1b69, #1e1b4b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card Hover Effects */
+.movie-card {
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading Animation */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Custom Input Styles */
+.custom-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .hero-bg {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("/hero.png");
 }

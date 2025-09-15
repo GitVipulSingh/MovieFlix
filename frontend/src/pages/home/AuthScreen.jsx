@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Play, Star, Users, Download, Smartphone, Tv, Monitor } from "lucide-react";
 
 const AuthScreen = () => {
 	const [email, setEmail] = useState("");
@@ -12,163 +12,200 @@ const AuthScreen = () => {
 	};
 
 	return (
-		<div className='hero-bg relative'>
-			{/* Navbar */}
-			<header className='max-w-6xl mx-auto flex items-center justify-between p-4 pb-10'>
-				<img src='/movieflix-logo.png' alt='MovieFlix Logo' className='w-32 md:w-52' />
-				<Link to={"/login"} className='text-white bg-red-600 py-1 px-2 rounded'>
+		<div className='min-h-screen animated-bg'>
+			{/* Modern Navbar */}
+			<header className='max-w-7xl mx-auto flex items-center justify-between p-6 relative z-10'>
+				<div className='flex items-center space-x-2'>
+					<div className='w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center'>
+						<Play className='w-6 h-6 text-white' />
+					</div>
+					<span className='text-2xl font-bold text-gradient'>MovieFlix</span>
+				</div>
+				<Link to={"/login"} className='gradient-btn text-white px-6 py-2 rounded-xl font-medium'>
 					Sign In
 				</Link>
 			</header>
 
-			{/* hero section */}
-			<div className='flex flex-col items-center justify-center text-center py-40 text-white max-w-6xl mx-auto'>
-				<h1 className='text-4xl md:text-6xl font-bold mb-4'>Unlimited movies, TV shows, and more</h1>
-				<p className='text-lg mb-4'>Watch anywhere. Cancel anytime.</p>
-				<p className='mb-4'>Ready to watch? Enter your email to create or restart your membership.</p>
-
-				<form className='flex flex-col md:flex-row gap-4 w-1/2' onSubmit={handleFormSubmit}>
-					<input
-						type='email'
-						placeholder='Email address'
-						className='p-2 rounded flex-1 bg-black/80 border border-gray-700'
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
-					<button className='bg-red-600 text-xl lg:text-2xl px-2 lg:px-6 py-1 md:py-2 rounded flex justify-center items-center'>
-						Get Started
-						<ChevronRight className='size-8 md:size-10' />
-					</button>
-				</form>
-			</div>
-
-			{/* separator */}
-			<div className='h-2 w-full bg-[#232323]' aria-hidden='true' />
-
-			{/* 1st section */}
-			<div className='py-10 bg-black text-white'>
-				<div className='flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2'>
-					{/* left side */}
-					<div className='flex-1 text-center md:text-left'>
-						<h2 className='text-4xl md:text-5xl font-extrabold mb-4'>Enjoy on your TV</h2>
-						<p className='text-lg md:text-xl'>
-							Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.
+			{/* Hero Section */}
+			<div className='max-w-7xl mx-auto px-6 py-20'>
+				<div className='text-center space-y-8'>
+					<div className='space-y-4'>
+						<h1 className='text-5xl md:text-7xl font-bold text-white leading-tight'>
+							Your Next
+							<span className='text-gradient block'>Favorite Movie</span>
+							Awaits
+						</h1>
+						<p className='text-xl text-gray-300 max-w-2xl mx-auto'>
+							Discover unlimited entertainment with our curated collection of movies and TV shows. 
+							Stream anywhere, anytime.
 						</p>
 					</div>
-					{/* right side */}
-					<div className='flex-1 relative'>
-						<img src='/tv.png' alt='Tv image' className='mt-4 z-20 relative' />
-						<video
-							className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 z-10'
-							playsInline
-							autoPlay={true}
-							muted
-							loop
-						>
-							<source src='/hero-vid.m4v' type='video/mp4' />
-						</video>
+
+					<form className='flex flex-col sm:flex-row gap-4 max-w-md mx-auto' onSubmit={handleFormSubmit}>
+						<input
+							type='email'
+							placeholder='Enter your email'
+							className='custom-input px-6 py-4 rounded-xl text-white placeholder-gray-400 flex-1'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+						<button className='gradient-btn px-8 py-4 rounded-xl font-semibold text-white flex items-center justify-center space-x-2'>
+							<span>Get Started</span>
+							<ChevronRight className='w-5 h-5' />
+						</button>
+					</form>
+
+					<div className='flex items-center justify-center space-x-8 text-gray-400 text-sm'>
+						<div className='flex items-center space-x-2'>
+							<Star className='w-4 h-4 text-yellow-400' />
+							<span>4.8/5 Rating</span>
+						</div>
+						<div className='flex items-center space-x-2'>
+							<Users className='w-4 h-4' />
+							<span>10M+ Users</span>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			{/* separator */}
-			<div className='h-2 w-full bg-[#232323]' aria-hidden='true' />
+			{/* Features Section */}
+			<div className='max-w-7xl mx-auto px-6 py-20 space-y-32'>
+				{/* Feature 1 - Multi-Device */}
+				<div className='grid md:grid-cols-2 gap-16 items-center'>
+					<div className='space-y-6'>
+						<div className='inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card'>
+							<Tv className='w-5 h-5 text-purple-400' />
+							<span className='text-purple-400 font-medium'>Multi-Device</span>
+						</div>
+						<h2 className='text-4xl md:text-5xl font-bold text-white'>
+							Watch on Any Device
+						</h2>
+						<p className='text-xl text-gray-300'>
+							Seamlessly switch between your TV, laptop, tablet, and phone. 
+							Your entertainment follows you everywhere.
+						</p>
+						<div className='flex space-x-4'>
+							<div className='glass-card p-4 rounded-xl'>
+								<Monitor className='w-8 h-8 text-blue-400 mb-2' />
+								<p className='text-white font-medium'>Desktop</p>
+							</div>
+							<div className='glass-card p-4 rounded-xl'>
+								<Smartphone className='w-8 h-8 text-purple-400 mb-2' />
+								<p className='text-white font-medium'>Mobile</p>
+							</div>
+							<div className='glass-card p-4 rounded-xl'>
+								<Tv className='w-8 h-8 text-indigo-400 mb-2' />
+								<p className='text-white font-medium'>Smart TV</p>
+							</div>
+						</div>
+					</div>
+					<div className='relative'>
+						<div className='glass-card p-8 rounded-3xl'>
+							<div className='aspect-video bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center'>
+								<Play className='w-16 h-16 text-white' />
+							</div>
+						</div>
+					</div>
+				</div>
 
-			{/* 2nd section */}
-			<div className='py-10 bg-black text-white'>
-				<div className='flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col-reverse px-4 md:px-2'>
-					{/* left side */}
-					<div className='flex-1 relative'>
-						<div className='relative'>
-							<img src='/stranger-things-lg.png' alt='Stranger Things img' className='mt-4' />
-
-							<div
-								className='flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black
-              w-3/4 lg:w-1/2 h-24 border border-slate-500 rounded-md px-2
-              '
-							>
-								<img src='/stranger-things-sm.png' alt='image' className='h-full' />
-								<div className=' flex justify-between items-center w-full'>
-									<div className='flex flex-col gap-0'>
-										<span className='text-md lg:text-lg font-bold'>Stranger Things</span>
-										<span className='text-sm text-blue-500'>Downloading...</span>
+				{/* Feature 2 - Offline Download */}
+				<div className='grid md:grid-cols-2 gap-16 items-center'>
+					<div className='relative md:order-1'>
+						<div className='glass-card p-8 rounded-3xl'>
+							<div className='space-y-4'>
+								<div className='flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl'>
+									<div className='w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center'>
+										<Download className='w-6 h-6 text-white' />
 									</div>
-
-									<img src='/download-icon.gif' alt='' className='h-12' />
+									<div>
+										<p className='text-white font-medium'>Avengers: Endgame</p>
+										<p className='text-purple-400 text-sm'>Downloaded • 3.2GB</p>
+									</div>
+								</div>
+								<div className='flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-xl'>
+									<div className='w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center'>
+										<Download className='w-6 h-6 text-white' />
+									</div>
+									<div>
+										<p className='text-white font-medium'>Stranger Things S4</p>
+										<p className='text-blue-400 text-sm'>Downloading... 67%</p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					{/* right side */}
-
-					<div className='flex-1 md:text-left text-center'>
-						<h2 className='text-4xl md:text-5xl font-extrabold mb-4 text-balance'>
-							Download your shows to watch offline
+					<div className='space-y-6 md:order-2'>
+						<div className='inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card'>
+							<Download className='w-5 h-5 text-blue-400' />
+							<span className='text-blue-400 font-medium'>Offline Mode</span>
+						</div>
+						<h2 className='text-4xl md:text-5xl font-bold text-white'>
+							Download & Watch Offline
 						</h2>
-						<p className='text-lg md:text-xl'>
-							Save your favorites easily and always have something to watch.
+						<p className='text-xl text-gray-300'>
+							Download your favorite content and watch it anywhere, even without an internet connection. 
+							Perfect for travel or commuting.
 						</p>
+					</div>
+				</div>
+
+				{/* Feature 3 - Personalized */}
+				<div className='grid md:grid-cols-2 gap-16 items-center'>
+					<div className='space-y-6'>
+						<div className='inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card'>
+							<Star className='w-5 h-5 text-yellow-400' />
+							<span className='text-yellow-400 font-medium'>Personalized</span>
+						</div>
+						<h2 className='text-4xl md:text-5xl font-bold text-white'>
+							Tailored Just for You
+						</h2>
+						<p className='text-xl text-gray-300'>
+							Our smart recommendation engine learns your preferences and suggests content 
+							you'll love. Discover hidden gems and trending favorites.
+						</p>
+						<div className='grid grid-cols-2 gap-4'>
+							<div className='glass-card p-4 rounded-xl text-center'>
+								<div className='text-2xl font-bold text-gradient'>98%</div>
+								<p className='text-gray-400 text-sm'>Match Accuracy</p>
+							</div>
+							<div className='glass-card p-4 rounded-xl text-center'>
+								<div className='text-2xl font-bold text-gradient'>50K+</div>
+								<p className='text-gray-400 text-sm'>Titles Available</p>
+							</div>
+						</div>
+					</div>
+					<div className='relative'>
+						<div className='glass-card p-8 rounded-3xl'>
+							<div className='space-y-4'>
+								<div className='text-white font-medium mb-4'>Recommended for You</div>
+								<div className='grid grid-cols-3 gap-3'>
+									{[1, 2, 3, 4, 5, 6].map((i) => (
+										<div key={i} className='aspect-[3/4] bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg'></div>
+									))}
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			{/* separator */}
-
-			<div className='h-2 w-full bg-[#232323]' aria-hidden='true' />
-
-			{/* 3rd section */}
-			<div className='py-10 bg-black text-white'>
-				<div className='flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2'>
-					{/* left side */}
-					<div className='flex-1 text-center md:text-left'>
-						<h2 className='text-4xl md:text-5xl font-extrabold mb-4'>Watch everywhere</h2>
-						<p className='text-lg md:text-xl'>
-							Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
-						</p>
-					</div>
-
-					{/* right side */}
-					<div className='flex-1 relative overflow-hidden'>
-						<img src='/device-pile.png' alt='Device image' className='mt-4 z-20 relative' />
-						<video
-							className='absolute top-2 left-1/2 -translate-x-1/2  h-4/6 z-10
-               max-w-[63%] 
-              '
-							playsInline
-							autoPlay={true}
-							muted
-							loop
-						>
-							<source src='/video-devices.m4v' type='video/mp4' />
-						</video>
-					</div>
-				</div>
-			</div>
-
-			<div className='h-2 w-full bg-[#232323]' aria-hidden='true' />
-
-			{/* 4th section*/}
-			<div className='py-10 bg-black text-white'>
-				<div
-					className='flex max-w-6xl mx-auto items-center justify-center flex-col-reverse md:flex-row
-           px-4 md:px-2
-        '
-				>
-					{/* left */}
-					<div className='flex-1 relative'>
-						<img src='/kids.png' alt='Enjoy on your TV' className='mt-4' />
-					</div>
-					{/* right */}
-					<div className='flex-1 text-center md:text-left'>
-						<h2 className='text-4xl md:text-5xl font-extrabold mb-4'>Create profiles for kids</h2>
-						<p className='text-lg md:text-xl'>
-							Send kids on adventures with their favorite characters in a space made just for them—free
-							with your membership.
-						</p>
-					</div>
+			{/* CTA Section */}
+			<div className='max-w-4xl mx-auto px-6 py-20 text-center'>
+				<div className='glass-card p-12 rounded-3xl space-y-8'>
+					<h2 className='text-4xl md:text-5xl font-bold text-white'>
+						Ready to Start Watching?
+					</h2>
+					<p className='text-xl text-gray-300'>
+						Join millions of users who have made MovieFlix their entertainment destination.
+					</p>
+					<Link to="/signup" className='gradient-btn inline-flex items-center space-x-2 px-8 py-4 rounded-xl font-semibold text-white'>
+						<span>Start Your Journey</span>
+						<ChevronRight className='w-5 h-5' />
+					</Link>
 				</div>
 			</div>
 		</div>
 	);
 };
+
 export default AuthScreen;
