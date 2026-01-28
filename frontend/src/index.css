@@ -52,11 +52,11 @@
   box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
-/* Animated Background */
+/* Animated Background - Simplified */
 .animated-bg {
-  background: linear-gradient(-45deg, #0f0f23, #1a1a3e, #2d1b69, #1e1b4b);
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #0f0f0f, #111111);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -96,16 +96,17 @@
 
 /* Custom Input Styles */
 .custom-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
 .custom-input:focus {
-  border-color: var(--primary-purple);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
 }
 
 .hero-bg {
